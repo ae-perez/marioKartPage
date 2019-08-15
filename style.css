@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass, .sky, .road {
+    position: relative;
+}
+
+.sky {
+    height: 40%;
+    background: skyblue;
+    width: 100%;
+}
+
+.grass {
+    height: 30%;
+    background: seagreen;
+}
+
+.road {
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+}
+
+.lines {
+    box-sizing: border-box;
+    border: 5px dashed white;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%
+}
+
+.cloud {
+    width: 320px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    animation: wind 90s linear infinite reverse;
+}
+
+.cloud1 {
+    width: 220px;
+    height: 100px;
+    position: absolute;
+    top: 160px;
+    opacity: 0.5;
+    animation: wind 60s linear infinite reverse;
+
+}
+
+/*// ELEMENTS TO ANIMATE //*/
+.mario {
+    width: 160px;
+    height: 130px;
+    position: absolute;
+    top: -40px;
+    left: 0px;
+
+    animation:  drive 3s both infinite cubic-bezier(0, .77, 1, .28),
+                jump 0.3s 1.2s ease;
+    
+}
+
+.toad {
+    width: 180px;
+    height: 150px;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    animation-name: drive;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+
+/*// KEYFRAMES //*/
+@keyframes drive {
+    from {left: -100px}
+    to { transform: translateX(1600px)}
+}
+
+@keyframes wind {
+    from {left: -300px}
+    to {left: 100%}  
+}
+
+@keyframes jump {
+    0% {top: -40px}
+    50% {top: -100px}
+    100% {top: -40px}
+}
+
+
+
+
+.circle {
+    width: 100px;
+    padding: 50px 0;
+    line-height: 0;
+    margin: 60px auto;
+    background: pink;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 1s ease-in; /*will change to salmon slower, meaning will change color and transform over the course of 1s
+    however if you want to do it on seperate parts of the hover --
+    transition: background 1s, transform 0.3s;
+    */
+}
+
+.circle:hover {
+    background: salmon;
+    transform: rotate(360deg)
+}
