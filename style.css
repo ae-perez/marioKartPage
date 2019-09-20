@@ -5,6 +5,123 @@ html, body {
     margin: 0;
 }
 
+#pop {
+    position: relative;
+    top: -400px;
+    left: 20px;
+    width: 400px;
+    height: 150px;
+    border-radius: 50%; 
+    z-index: 1;
+    transform: rotate(-50deg);
+    animation: drop 2.5s ease forwards;
+}
+
+.menu {
+    position: absolute;
+    right: 30px;
+    top: 8px;
+    z-index: 1;
+    opacity: 0.3;
+
+}
+
+.menu-icon {
+    width: 55px;
+    height: 55px;
+    z-index: 1;
+}
+
+.menu-links {
+    display: none;
+    /*background: yellow;*/
+    height: 55px;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    z-index: 1;
+}
+
+.links {
+    padding-right: 60px;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu-links:hover a {
+    background: white;
+}
+
+.menu:hover + .menu-links {
+    display: block;
+    animation: slidesIn 2.5s ease forwards;
+
+}
+
+.menu:hover{
+    opacity: 1;
+    transition: 1s;
+}
+
+h1 {
+    position: absolute;
+    z-index: 1;
+}
+
+h1:nth-child(1) {
+    margin: 0 auto;
+    left: 20px;
+    font-size: 60px;
+}
+
+h1:nth-child(2) {
+    top: 35px;
+    left: 20px;
+    font-size: 60px; 
+}
+
+.topTitle:nth-child(1) {
+    color: blue;
+}
+
+.topTitle:nth-child(2) {
+    color: yellow;
+}
+
+.topTitle:nth-child(3) {
+    color: red;
+}
+
+.topTitle:nth-child(4) {
+    color: green;
+}
+
+.topTitle:nth-child(5) {
+    color: yellow;   
+}
+
+.btmTitle:nth-child(1) {
+    color: red;
+}
+
+.btmTitle:nth-child(2) {
+    color: green;
+}
+
+.btmTitle:nth-child(3) {
+    color: yellow;
+}
+
+.btmTitle:nth-child(4) {
+    color: blue;
+}
+
+.btmTitle:nth-child(5) {
+    color: green;
+}
+
+
 .grass, .sky, .road {
     position: relative;
 }
@@ -57,6 +174,7 @@ html, body {
 }
 
 /*// ELEMENTS TO ANIMATE //*/
+
 .mario {
     width: 160px;
     height: 130px;
@@ -80,8 +198,13 @@ html, body {
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-
 }
+
+.topTitle, .btmTitle {
+    font-family: 'Press Start 2P', cursive;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
 
 
 /*// KEYFRAMES //*/
@@ -101,6 +224,21 @@ html, body {
     100% {top: -40px}
 }
 
+@keyframes glow {
+    from {text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff, 0 0 60px #fff, 0 0 70px #fff;}
+    to {text-shadow: 0 0 20px #fff, 0 0 30px #9c9b9b, 0 0 40px #9c9b9b, 0 0 50px #9c9b9b, 0 0 60px #9c9b9b, 0 0 70px #9c9b9b, 0 0 80px #9c9b9b;}
+}
+
+@keyframes drop {
+    0% {opacity: 0}
+    50% {transform: translateY(500px)}
+    100% {transform: translateY(450px); opacity: 1;}
+}
+
+@keyframes slidesIn {
+    from {top: -450px}
+    to {top: 20px}
+}
 
 
 
